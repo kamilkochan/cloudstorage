@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+
+        <title>Result</title>
+    </head>
+    <body class="p-3 mb-2 bg-light text-black">
+        <div class="container justify-content-center w-50 p-3" style="margin-top: 5em;">
+            <div id="note-success-msg" th:if="${saveNoteSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>Your changes were successfully saved. Click <a id="success-home-note-link" th:href="@{/home/#nav-notes}">here</a> to continue.</span>
+            </div>
+            <div id="note-error-msg" th:if="${saveNoteError}" class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>Your changes were not saved. Click <a id="error-home-note-link" th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <div id="credential-success-msg" th:if="${saveCredentialSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>Your changes were successfully saved. Click <a id="credential-success-home-link" th:href="@{/home/#nav-credentials}">here</a> to continue.</span>
+            </div>
+            <div id="credential-error-msg" th:if="${saveCredentialError}" class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>Your changes were not saved. Click <a id="credential-error-home-link" th:href="@{/home/#nav-credentials}">here</a> to continue.</span>
+            </div>
+
+            <div id="file-success-msg" th:if="${saveFileSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>Your changes were successfully saved. Click <a id="file-success-home-link" th:href="@{/home/#nav-files}">here</a> to continue.</span>
+            </div>
+            <div id="file-error-msg" th:if="${saveFileError}" class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>Your changes were not saved. Click <a id="file-error-home-link" th:href="@{/home/#nav-files}">here</a> to continue.</span>
+            </div>
+
+            <div th:if="${error}" class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span th:text="${error}">Example Error Message</span>
+                <span>Click <a id="error-home-link" th:href="@{/home}">here</a> to continue.</span>
+            </div>
+        </div>
+    </body>
+</html>
